@@ -17,11 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($pesan)) $error_pesan = "Pesan tidak boleh kosong";
 
     if (empty($error_nama) && empty($error_email) && empty($error_pesan)) {
-        // Load model and save to DB
+        
         $CI = &get_instance();
         $CI->load->model('Buku_tamu_model');
         $CI->Buku_tamu_model->save_message($nama, $email, $pesan);
-        $nama = $email = $pesan = ''; // reset
+        $nama = $email = $pesan = ''; 
     }
 }
 
